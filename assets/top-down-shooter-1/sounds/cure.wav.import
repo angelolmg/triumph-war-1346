@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/cure.wav-219c8be5d72714abd4e3d1706312f725.sample"
+
+[deps]
+
+source_file="res://assets/top-down-shooter-1/sounds/cure.wav"
+dest_files=[ "res://.import/cure.wav-219c8be5d72714abd4e3d1706312f725.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
