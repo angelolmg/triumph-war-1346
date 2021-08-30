@@ -36,3 +36,9 @@ func get_team() -> int:
 func handle_hit():
 	health_stat.health -= 20
 	print("player hit", health_stat.health)
+
+func _pause_process(delta):
+	if Input.is_action_pressed("pause"):
+		if get_tree().paused == false:
+			get_tree().paused = true
+			$PauseMenu.show()
