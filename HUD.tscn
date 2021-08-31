@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/top-down-shooter-1/characters/head/1.png" type="Texture" id=1]
+[ext_resource path="res://HUD.gd" type="Script" id=2]
+
+[node name="HUD" type="MarginContainer"]
+anchor_right = 1.0
+margin_bottom = 42.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 42.0
+
+[node name="Bars" type="HBoxContainer" parent="HBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+
+[node name="AlliesStats" type="HBoxContainer" parent="HBoxContainer/Bars"]
+margin_right = 100.0
+margin_bottom = 42.0
+custom_constants/separation = 0
+
+[node name="Background" type="NinePatchRect" parent="HBoxContainer/Bars/AlliesStats"]
+margin_right = 100.0
+margin_bottom = 42.0
+patch_margin_left = 100
+
+[node name="Title" type="TextureRect" parent="HBoxContainer/Bars/AlliesStats/Background"]
+margin_left = 0.0947495
+margin_top = 1.75992
+margin_right = 16.0947
+margin_bottom = 49.7599
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Equal" type="Label" parent="HBoxContainer/Bars/AlliesStats/Background"]
+margin_left = 38.4539
+margin_top = 0.555061
+margin_right = 46.4539
+margin_bottom = 48.5551
+rect_scale = Vector2( 2, 2 )
+text = "=
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Number" type="Label" parent="HBoxContainer/Bars/AlliesStats/Background"]
+margin_left = 60.6632
+margin_top = 0.870041
+margin_right = 76.6632
+margin_bottom = 31.87
+rect_scale = Vector2( 2, 2 )
+text = "
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
