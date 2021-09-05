@@ -14,7 +14,9 @@ extents = Vector2( 9.14222, 8 )
 [sub_resource type="CircleShape2D" id=2]
 radius = 72.4431
 
-[node name="Ally" type="KinematicBody2D"]
+[node name="Ally" type="KinematicBody2D" groups=[
+"Allies",
+]]
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 
@@ -52,6 +54,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Team" parent="." instance=ExtResource( 7 )]
+
 [connection signal="body_entered" from="AI/DetectionZone" to="AI" method="_on_DetectionZone_body_entered"]
 [connection signal="body_exited" from="AI/DetectionZone" to="AI" method="_on_DetectionZone_body_exited"]
 [connection signal="timeout" from="AI/PatrolTimer" to="AI" method="_on_PatrolTimer_timeout"]
