@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MenuButton.wav-1dc594537d51ecaa3ae6723be116f3ad.sample"
+
+[deps]
+
+source_file="res://assets/top-down-shooter-1/soundEffects/MenuButton.wav"
+dest_files=[ "res://.import/MenuButton.wav-1dc594537d51ecaa3ae6723be116f3ad.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

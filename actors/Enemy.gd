@@ -8,6 +8,9 @@ onready var team = $Team
 
 export (int) var speed = 100
 
+signal ally_killed
+signal enemy_killed
+
 func _ready():
 	ai.initialize(self, weapon, team.team)
 	weapon.initialize(team.team)
@@ -24,5 +27,9 @@ func get_team() -> int:
 func handle_hit():
 	health_stat.health -= 20
 	if health_stat.health <= 0:
+		if team.team == 0:
+			emit_signal("ally_killed")
+		if team.team == 1:
+			emit_signal("enemy_killed")
 		queue_free()
 

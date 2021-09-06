@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( 1071.53, -4.71636 )
+b = Vector2( -0.0443382, -0.0844002 )
+
+[node name="InvisibleWall" type="StaticBody2D"]
+collision_layer = 512
+collision_mask = 0
+
+[node name="InvisibleWall" type="CollisionShape2D" parent="."]
+position = Vector2( -0.072258, 0.0710373 )
+shape = SubResource( 1 )

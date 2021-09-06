@@ -5,4 +5,5 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_BackButton_pressed():
+	$MenuHitSound.play()
 	get_tree().change_scene("res://MainMenu.tscn")

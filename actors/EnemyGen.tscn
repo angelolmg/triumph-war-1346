@@ -8,7 +8,9 @@
 
 [sub_resource type="CircleShape2D" id=1]
 
-[node name="EnemyGen" type="KinematicBody2D"]
+[node name="EnemyGen" type="KinematicBody2D" groups=[
+"Enemy",
+]]
 script = ExtResource( 3 )
 
 [node name="Body" type="Sprite" parent="."]
@@ -29,4 +31,5 @@ health = 300
 
 [node name="Team" parent="." instance=ExtResource( 5 )]
 team = 1
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

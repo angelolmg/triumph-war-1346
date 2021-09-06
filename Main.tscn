@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/Enemy.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://actors/EnemyGen.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/top-down-shooter-1/background/tileset.png" type="Texture" id=9]
+[ext_resource path="res://InvisibleWall.tscn" type="PackedScene" id=10]
 
 [node name="Main" type="Node2D"]
 pause_mode = 1
@@ -1460,8 +1461,23 @@ margin_top = 10.0
 margin_right = 108.0
 margin_bottom = 52.0
 
-[node name="Timer" type="Timer" parent="."]
+[node name="HelpCallerGen" type="Timer" parent="."]
 wait_time = 50.0
 autostart = true
+
+[node name="InvisibleWall" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1, 10.9797 )
+
+[node name="InvisibleWall2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -1.63243, 597.865 )
+
+[node name="InvisibleWall3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1028.47, -10.426 )
+rotation = 1.5708
+
+[node name="InvisibleWall4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3.37842, 3.84447 )
+rotation = 1.5708
+
 [connection signal="input_event" from="Player" to="." method="_on_Player_input_event"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="HelpCallerGen" to="." method="_on_Timer_timeout"]

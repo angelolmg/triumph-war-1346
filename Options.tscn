@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Options.gd" type="Script" id=1]
+[ext_resource path="res://Sounds/MenuHitSound.tscn" type="PackedScene" id=2]
 
 [node name="Options" type="Control"]
 anchor_left = 1.0
@@ -32,5 +33,7 @@ margin_bottom = 41.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Back"
+
+[node name="MenuHitSound" parent="." instance=ExtResource( 2 )]
 
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

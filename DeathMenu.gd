@@ -17,8 +17,10 @@ func _ready():
 
 
 func _on_TryAgain_pressed():
+	$MenuHitSound.play()
 	get_tree().change_scene("res://Main.tscn")
 
 
 func _on_GoToMenu_pressed():
+	$MenuHitSound.play()
 	get_tree().change_scene("res://MainMenu.tscn")

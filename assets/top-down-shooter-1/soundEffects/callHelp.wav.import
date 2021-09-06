@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/callHelp.wav-010f06184f92df3808480e483a7cae59.sample"
+
+[deps]
+
+source_file="res://assets/top-down-shooter-1/soundEffects/callHelp.wav"
+dest_files=[ "res://.import/callHelp.wav-010f06184f92df3808480e483a7cae59.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
