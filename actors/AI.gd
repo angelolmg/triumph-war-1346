@@ -74,7 +74,7 @@ func _on_PatrolTimer_timeout():
 
 
 func _on_DetectionZone_body_entered(body):
-	if body.has_method("get_team") and body.get_team() != team:
+	if body.has_method("get_team") and body.get_team() != team and body.get_team() != 2:
 		set_state(State.ENGAGE)
 		target = body
 

@@ -2,7 +2,8 @@ extends Node2D
 
 enum TeamName {
 	PLAYER,
-	ENEMY
+	ENEMY,
+	STATIC
 }
 
 export (TeamName) var team = TeamName.PLAYER

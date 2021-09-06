@@ -60,7 +60,6 @@ one_shot = true
 team = 1
 
 [node name="EnemyDieSound" parent="." instance=ExtResource( 8 )]
-
 [connection signal="body_entered" from="AI/DetectionZone" to="AI" method="_on_DetectionZone_body_entered"]
 [connection signal="body_exited" from="AI/DetectionZone" to="AI" method="_on_DetectionZone_body_exited"]
 [connection signal="timeout" from="AI/PatrolTimer" to="AI" method="_on_PatrolTimer_timeout"]
