@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/top-down-shooter-1/item/barril.png" type="Texture" id=1]
 [ext_resource path="res://actors/Enemy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://EnemyGen.gd" type="Script" id=3]
+[ext_resource path="res://actors/EnemyGen.gd" type="Script" id=3]
 [ext_resource path="res://actors/Health.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Team.tscn" type="PackedScene" id=5]
 
@@ -25,8 +25,8 @@ autostart = true
 visible = false
 
 [node name="Health" parent="." instance=ExtResource( 4 )]
+health = 300
 
 [node name="Team" parent="." instance=ExtResource( 5 )]
 team = 1
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

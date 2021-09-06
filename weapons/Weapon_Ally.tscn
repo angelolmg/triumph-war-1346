@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://weapons/Bullet.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/top-down-shooter-1/weapons/attach-to-body/3.png" type="Texture" id=2]
+[ext_resource path="res://assets/top-down-shooter-1/weapons/attach-to-body/1.png" type="Texture" id=2]
 [ext_resource path="res://assets/top-down-shooter-1/weapons/shoot/2.png" type="Texture" id=3]
 [ext_resource path="res://weapons/Weapon.gd" type="Script" id=4]
 
@@ -51,6 +51,7 @@ position = Vector2( -5.81741e-05, 16 )
 rotation = 1.5708
 
 [node name="AttackCooldown" type="Timer" parent="."]
+wait_time = 0.3
 one_shot = true
 
 [node name="MuzzleFlash" type="Sprite" parent="."]

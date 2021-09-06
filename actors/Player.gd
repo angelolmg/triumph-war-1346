@@ -35,5 +35,7 @@ func get_team() -> int:
 
 func handle_hit():
 	health_stat.health -= 20
-	print("player hit", health_stat.health)
+	if health_stat.health <= 0:
+		queue_free()
+	#print("player hit", health_stat.health)
 

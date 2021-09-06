@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://weapons/Weapon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/top-down-shooter-1/characters/body/1.png" type="Texture" id=2]
 [ext_resource path="res://assets/top-down-shooter-1/characters/head/2.png" type="Texture" id=3]
 [ext_resource path="res://actors/Player.gd" type="Script" id=4]
 [ext_resource path="res://Team.tscn" type="PackedScene" id=5]
+[ext_resource path="res://weapons/Weapon_Ally.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actors/Health.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -14,7 +14,7 @@ extents = Vector2( 9.14222, 8 )
 "player",
 ]]
 position = Vector2( 39.7673, 43.5299 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 4 )
 
 [node name="Body" type="Sprite" parent="."]
@@ -33,7 +33,7 @@ shape = SubResource( 1 )
 
 [node name="Health" parent="." instance=ExtResource( 7 )]
 
-[node name="Weapon" parent="." instance=ExtResource( 1 )]
-position = Vector2( 10.6163, -0.76495 )
+[node name="Weapon" parent="." instance=ExtResource( 6 )]
+position = Vector2( 10.643, 0 )
 
 [node name="Team" parent="." instance=ExtResource( 5 )]

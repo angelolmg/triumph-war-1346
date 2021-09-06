@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
-onready var health_stat: int = 100
+#onready var health_stat: int = 100
 onready var ai = $AI
 onready var weapon: Weapon = $Weapon
+onready var health_stat = $Health
 onready var team = $Team
 
 export (int) var speed = 100
@@ -21,7 +22,7 @@ func get_team() -> int:
 	return team.team
 
 func handle_hit():
-	health_stat -= 20
-	if health_stat <= 0:
+	health_stat.health -= 20
+	if health_stat.health <= 0:
 		queue_free()
 

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-onready var health_stat: int = 300
 onready var team = $Team
+onready var health_stat = $Health
 
 const Enemy = preload("res://actors/Enemy.tscn")
 
@@ -21,6 +21,6 @@ func _on_Timer_timeout():
 	$Timer.wait_time = 10 #setar tempo para respawnar
 
 func handle_hit():
-	health_stat -= 20
-	if health_stat <= 0:
+	health_stat.health -= 20
+	if health_stat.health <= 0:
 		queue_free()
