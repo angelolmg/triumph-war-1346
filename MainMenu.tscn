@@ -62,7 +62,6 @@ margin_bottom = 179.0
 text = "Quit"
 
 [node name="MenuHitSound" parent="." instance=ExtResource( 1 )]
-
 [connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

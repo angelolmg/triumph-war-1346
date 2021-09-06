@@ -4,3 +4,7 @@
 	<img src="tdsv1.gif" />
 </p>
 <p>Following along: https://www.youtube.com/playlist?list=PLpwc3ughKbZexDyPexHN2MXLliKAovkpl</p>
+<p align="center">
+	<h3>v0.2</h3>
+	<img src="tdsv2.gif" />
+</p>

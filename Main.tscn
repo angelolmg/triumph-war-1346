@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/Enemy.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://actors/EnemyGen.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/top-down-shooter-1/background/tileset.png" type="Texture" id=9]
 [ext_resource path="res://InvisibleWall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Wall.tscn" type="PackedScene" id=11]
 
 [node name="Main" type="Node2D"]
 pause_mode = 1
@@ -1387,44 +1388,44 @@ region_enabled = true
 region_rect = Rect2( 3, 3, 58, 58 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 173.048, 283.933 )
+position = Vector2( 145.498, 298.119 )
 collision_layer = 5
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
-position = Vector2( 840.095, 501.017 )
+position = Vector2( 827.498, 522.119 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 654.095, 483.017 )
+position = Vector2( 641.498, 504.119 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 817.575, 259.819 )
+position = Vector2( 804.978, 280.921 )
 
 [node name="Enemy4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 827.436, 78.6716 )
+position = Vector2( 814.839, 99.7737 )
 
 [node name="Enemy5" parent="." instance=ExtResource( 2 )]
-position = Vector2( 658.095, 69.0169 )
+position = Vector2( 645.498, 90.1189 )
 
 [node name="Ally" parent="." instance=ExtResource( 5 )]
-position = Vector2( 467.048, 485.819 )
+position = Vector2( 465.513, 491.184 )
 
 [node name="Ally2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 466.307, 97.0583 )
+position = Vector2( 464.772, 102.423 )
 
 [node name="Ally3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 227.033, 92.7542 )
+position = Vector2( 225.498, 98.119 )
 
 [node name="Ally4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 380.54, 298.818 )
+position = Vector2( 379.005, 304.183 )
 
 [node name="Ally5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 231.422, 477.211 )
+position = Vector2( 229.887, 482.576 )
 
 [node name="EnemyGen" parent="." instance=ExtResource( 8 )]
-position = Vector2( 906.983, 433.397 )
+position = Vector2( 924.494, 454.798 )
 
 [node name="EnemyGen2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 903.987, 148.718 )
+position = Vector2( 921.498, 170.119 )
 
 [node name="BulletManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -1465,19 +1466,73 @@ margin_bottom = 52.0
 wait_time = 50.0
 autostart = true
 
-[node name="InvisibleWall" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1, 10.9797 )
-
-[node name="InvisibleWall2" parent="." instance=ExtResource( 10 )]
-position = Vector2( -1.63243, 597.865 )
-
-[node name="InvisibleWall3" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1028.47, -10.426 )
-rotation = 1.5708
-
-[node name="InvisibleWall4" parent="." instance=ExtResource( 10 )]
+[node name="Inner Wall" type="Node2D" parent="."]
 position = Vector2( 3.37842, 3.84447 )
 rotation = 1.5708
 
+[node name="Wall" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 158.274, -246.121 )
+
+[node name="Wall2" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 158.274, -278.121 )
+
+[node name="Wall3" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 190.274, -246.121 )
+
+[node name="Wall4" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 190.274, -278.12 )
+
+[node name="Wall5" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 406.274, -246.122 )
+
+[node name="Wall6" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 406.274, -278.121 )
+
+[node name="Wall7" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 438.274, -246.121 )
+
+[node name="Wall8" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 438.274, -278.121 )
+
+[node name="Wall9" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 158.272, -742.121 )
+
+[node name="Wall10" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 158.272, -774.12 )
+
+[node name="Wall11" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 190.272, -742.121 )
+
+[node name="Wall12" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 190.272, -774.12 )
+
+[node name="Wall13" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 406.272, -742.122 )
+
+[node name="Wall14" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 406.272, -774.121 )
+
+[node name="Wall15" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 438.272, -742.122 )
+
+[node name="Wall16" parent="Inner Wall" instance=ExtResource( 11 )]
+position = Vector2( 438.272, -774.121 )
+
+[node name="Outer Wall" type="Node2D" parent="."]
+position = Vector2( 3.37842, 3.84447 )
+rotation = 1.5708
+
+[node name="InvisibleWall" parent="Outer Wall" instance=ExtResource( 10 )]
+position = Vector2( 7.13524, 2.37839 )
+rotation = -1.5708
+
+[node name="InvisibleWall2" parent="Outer Wall" instance=ExtResource( 10 )]
+position = Vector2( 594.021, 5.0087 )
+rotation = -1.5708
+
+[node name="InvisibleWall3" parent="Outer Wall" instance=ExtResource( 10 )]
+position = Vector2( -14.2742, -1025.09 )
+
+[node name="InvisibleWall4" parent="Outer Wall" instance=ExtResource( 10 )]
 [connection signal="input_event" from="Player" to="." method="_on_Player_input_event"]
 [connection signal="timeout" from="HelpCallerGen" to="." method="_on_Timer_timeout"]
