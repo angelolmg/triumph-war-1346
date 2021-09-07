@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/top-down-shooter-1/sounds/shoot-1.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sounds/BulletShootSound.gd" type="Script" id=2]
+
+[node name="BulletShootSound" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+script = ExtResource( 2 )

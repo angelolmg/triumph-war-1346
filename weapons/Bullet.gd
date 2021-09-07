@@ -5,10 +5,14 @@ export (int) var speed = 10
 
 onready var kill_timer = $KillTimer
 
+const BulletShootSound = preload("res://Sounds/BulletShootSound.tscn")
+
 var direction := Vector2.ZERO
 var team: int = -1
 
 func _ready():
+	var GrabedInstance= BulletShootSound.instance()
+	get_tree().get_root().get_node("Main").add_child(GrabedInstance)
 	kill_timer.start()
 
 func _physics_process(delta):

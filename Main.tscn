@@ -1535,5 +1535,9 @@ position = Vector2( -14.2742, -1025.09 )
 
 [node name="InvisibleWall4" parent="Outer Wall" instance=ExtResource( 10 )]
 
+[node name="RevivePlayer" type="Timer" parent="."]
+wait_time = 4.0
+
 [connection signal="input_event" from="Player" to="." method="_on_Player_input_event"]
 [connection signal="timeout" from="HelpCallerGen" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="RevivePlayer" to="." method="_on_RevivePlayer_timeout"]

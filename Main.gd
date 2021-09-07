@@ -1,6 +1,5 @@
 extends Node2D
 
-
 onready var bullet_manager = $BulletManager
 onready var player: Player = $Player
 
@@ -13,7 +12,6 @@ func _ready():
 	_update_allies()
 	randomize()
 	GlobalSignals.connect("bullet_fired", bullet_manager, "handle_bullet_spawned")
-	
 
 func _update_allies():
 	var allyNumb = get_tree().get_nodes_in_group("Allies")
@@ -55,3 +53,13 @@ func _check_game_status(): #Checar se os aliados/player estão mortos ou os inim
 	if enemyNumb == 0:
 		get_tree().change_scene("res://WinMenu.tscn")
 	
+func _start_reviving():
+	print("Morri, comece a contagem")
+	$RevivePlayer.start()
+	
+func _on_RevivePlayer_timeout():
+	if get_tree().get_nodes_in_group("Allies").size() != 0:
+		player.instance()
+		$RevivePlayer.stop()
+	else:
+		$RevivePlayer.wait_time = 1
