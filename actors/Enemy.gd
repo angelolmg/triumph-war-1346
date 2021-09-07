@@ -6,10 +6,10 @@ onready var weapon: Weapon = $Weapon
 onready var health_stat = $Health
 onready var team = $Team
 
-export (int) var speed = 100
+const AllyDieSound = preload("res://Sounds/AllyDieSound.tscn")
+const EnemyDieSound = preload("res://Sounds/EnemyDieSound.tscn")
 
-signal ally_killed
-signal enemy_killed
+export (int) var speed = 100
 
 func _ready():
 	ai.initialize(self, weapon, team.team)
@@ -28,8 +28,14 @@ func handle_hit():
 	health_stat.health -= 20
 	if health_stat.health <= 0:
 		if team.team == 0:
-			emit_signal("ally_killed")
+			#Criar instancia
+			var GrabedInstance= AllyDieSound.instance()
+			#Adicionar a arvore game
+			get_tree().get_root().get_node("Main").add_child(GrabedInstance)
 		if team.team == 1:
-			emit_signal("enemy_killed")
+			#Criar instancia
+			var GrabedInstance= EnemyDieSound.instance()
+			#Adicionar a arvore game
+			get_tree().get_root().get_node("Main").add_child(GrabedInstance)
 		queue_free()
 

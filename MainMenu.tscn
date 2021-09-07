@@ -1,20 +1,26 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://Sounds/MenuHitSound.tscn" type="PackedScene" id=1]
+[gd_scene load_steps=2 format=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
+
+const MenuHitSound = preload(\"res://Sounds/MenuHitSound.tscn\")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _on_NewGameButton_pressed():
-	$MenuHitSound.play()
+	#Criar instancia
+	var GrabedInstance= MenuHitSound.instance()
+	#Adicionar a arvore game
+	self.add_child(GrabedInstance)
 	get_tree().change_scene(\"res://Main.tscn\")
 
 func _on_OptionsButton_pressed():
-	$MenuHitSound.play()
+	#Criar instancia
+	var GrabedInstance= MenuHitSound.instance()
+	#Adicionar a arvore game
+	self.add_child(GrabedInstance)
 	get_tree().change_scene(\"res://Options.tscn\")
 
 func _on_QuitButton_pressed():
@@ -61,7 +67,6 @@ margin_right = 405.0
 margin_bottom = 179.0
 text = "Quit"
 
-[node name="MenuHitSound" parent="." instance=ExtResource( 1 )]
 [connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

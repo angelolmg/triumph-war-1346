@@ -8,9 +8,6 @@ onready var player: Player = $Player
 const Ally = preload("res://actors/Ally.tscn")
 const callHelp = preload("res://CallHelp.tscn")
 
-signal ally_killed
-signal enemy_killed
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_update_allies()
@@ -47,12 +44,6 @@ func _on_Timer_timeout():
 	GrabedInstance.global_transform.origin = Vector2(x_pos, y_pos)
 	GrabedInstance.connect("body_entered", self, "_generate_allies")
 	$HelpCallerGen.wait_time = 50 #setar tempo para respawnar
-	
-func _on_ally_killed():
-	print("Ally killed")
-	
-func _on_enemy_killed():
-	print("Enemy killed")
 
 #func _check_game_status #Checar se os aliados/player estão mortos ou os inimigos estão mortos
 	

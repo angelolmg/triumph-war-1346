@@ -3,6 +3,8 @@ class_name Player
 
 export (int) var speed = 200
 
+const AllyDieSound = preload("res://Sounds/AllyDieSound.tscn")
+
 onready var weapon: Weapon = $Weapon
 onready var health_stat = $Health
 onready var team = $Team
@@ -36,6 +38,10 @@ func get_team() -> int:
 func handle_hit():
 	health_stat.health -= 20
 	if health_stat.health <= 0:
+		#Criar instancia
+		var GrabedInstance= AllyDieSound.instance()
+		#Adicionar a arvore game
+		get_tree().get_root().get_node("Main").add_child(GrabedInstance)
 		queue_free()
 	#print("player hit", health_stat.health)
 
