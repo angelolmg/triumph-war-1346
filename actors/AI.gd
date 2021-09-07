@@ -28,10 +28,11 @@ func _physics_process(delta):
 	match current_state:
 		State.PATROL:
 			if not patrol_location_reached:
-				actor.move_and_slide(actor_velocity)
+				actor.move_and_slide(actor_velocity,Vector2( 0, 0),false,1)
 				actor.rotate_toward(patrol_location)
 				if actor.global_position.distance_to(patrol_location) < 5:
 					patrol_location_reached = true
+					origin = global_position
 					actor_velocity = Vector2.ZERO
 					patrol_timer.start()
 		State.ENGAGE:
@@ -65,10 +66,12 @@ func initialize(actor: KinematicBody2D, weapon: Weapon, team: int):
 	
 
 func _on_PatrolTimer_timeout():
-	var patrol_range = 50
+	var patrol_range = 150
 	var random_x = rand_range(-patrol_range, patrol_range)
 	var random_y = rand_range(-patrol_range, patrol_range)
-	patrol_location = Vector2(random_x, random_y) + origin
+	var new_x = clamp(random_x + origin.x, 50, 950)
+	var new_y = clamp(random_y + origin.y, 50, 550)
+	patrol_location = Vector2(new_x, new_y)
 	patrol_location_reached = false
 	actor_velocity = actor.velocity_toward(patrol_location)
 
@@ -83,3 +86,4 @@ func _on_DetectionZone_body_exited(body):
 	if target and body == target:
 		set_state(State.PATROL)
 		target = null
+	

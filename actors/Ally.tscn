@@ -19,7 +19,7 @@ radius = 72.4431
 "Allies",
 ]]
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 256
+collision_layer = 257
 collision_mask = 640
 script = ExtResource( 1 )
 
@@ -51,10 +51,10 @@ script = ExtResource( 5 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AI/DetectionZone"]
+scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 2 )
 
 [node name="PatrolTimer" type="Timer" parent="AI"]
-wait_time = 3.0
 one_shot = true
 
 [node name="Team" parent="." instance=ExtResource( 7 )]

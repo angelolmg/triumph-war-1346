@@ -8,7 +8,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.863, 8.9395 )
 
-[node name="Wall" type="KinematicBody2D"]
+[node name="Wall" type="KinematicBody2D" groups=[
+"Enemy",
+]]
 position = Vector2( 198.274, -126.121 )
 scale = Vector2( 2, 2 )
 collision_layer = 897

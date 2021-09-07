@@ -1388,7 +1388,7 @@ region_enabled = true
 region_rect = Rect2( 3, 3, 58, 58 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 145.498, 298.119 )
+position = Vector2( 153.498, 306.119 )
 collision_layer = 5
 
 [node name="Enemy" parent="." instance=ExtResource( 2 )]
@@ -1419,7 +1419,7 @@ position = Vector2( 225.498, 98.119 )
 position = Vector2( 379.005, 304.183 )
 
 [node name="Ally5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 229.887, 482.576 )
+position = Vector2( 609.498, 290.119 )
 
 [node name="EnemyGen" parent="." instance=ExtResource( 8 )]
 position = Vector2( 924.494, 454.798 )
@@ -1467,7 +1467,7 @@ wait_time = 50.0
 autostart = true
 
 [node name="Inner Wall" type="Node2D" parent="."]
-position = Vector2( 3.37842, 3.84447 )
+position = Vector2( 17.4983, -501.881 )
 rotation = 1.5708
 
 [node name="Wall" parent="Inner Wall" instance=ExtResource( 11 )]
