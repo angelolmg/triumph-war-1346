@@ -44,4 +44,6 @@ func handle_hit():
 		get_tree().get_root().get_node("Main").add_child(GrabedInstance)
 		queue_free()
 	#print("player hit", health_stat.health)
+	
+
 

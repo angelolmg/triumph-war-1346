@@ -1,11 +1,11 @@
 extends Control
 
 const MenuHitSound = preload("res://Sounds/MenuHitSound.tscn")
-const LoseSound = preload("res://Sounds/LoseSound.tscn")
+const WinSound = preload("res://Sounds/WinSound.tscn")
 
 func _ready():
 	#Criar instancia
-	var GrabedInstance= LoseSound.instance()
+	var GrabedInstance= WinSound.instance()
 	#Adicionar a arvore game
 	self.add_child(GrabedInstance)
 

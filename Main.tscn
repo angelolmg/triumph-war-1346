@@ -1463,7 +1463,7 @@ margin_right = 108.0
 margin_bottom = 52.0
 
 [node name="HelpCallerGen" type="Timer" parent="."]
-wait_time = 50.0
+wait_time = 5.0
 autostart = true
 
 [node name="Inner Wall" type="Node2D" parent="."]

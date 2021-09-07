@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sounds/WinSound.gd" type="Script" id=1]
+[ext_resource path="res://assets/top-down-shooter-1/soundEffects/MissionSuccess.wav" type="AudioStream" id=2]
+
+[node name="WinSound" type="AudioStreamPlayer"]
+stream = ExtResource( 2 )
+script = ExtResource( 1 )

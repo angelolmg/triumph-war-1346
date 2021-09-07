@@ -18,7 +18,7 @@ radius = 72.4431
 "Enemy",
 ]]
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 129
+collision_layer = 128
 collision_mask = 768
 script = ExtResource( 1 )
 
@@ -36,6 +36,14 @@ texture = ExtResource( 3 )
 position = Vector2( -0.561226, -3 )
 shape = SubResource( 1 )
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.561226, -3 )
+shape = SubResource( 1 )
+
 [node name="Weapon" parent="." instance=ExtResource( 4 )]
 position = Vector2( 10.6163, -0.76495 )
 
@@ -47,6 +55,8 @@ script = ExtResource( 5 )
 [node name="DetectionZone" type="Area2D" parent="AI" groups=[
 "enemy",
 ]]
+collision_layer = 128
+collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AI/DetectionZone"]
 scale = Vector2( 1.5, 1.5 )
@@ -58,6 +68,7 @@ one_shot = true
 [node name="Team" parent="." instance=ExtResource( 7 )]
 team = 1
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="AI/DetectionZone" to="AI" method="_on_DetectionZone_body_entered"]
 [connection signal="body_exited" from="AI/DetectionZone" to="AI" method="_on_DetectionZone_body_exited"]
 [connection signal="timeout" from="AI/PatrolTimer" to="AI" method="_on_PatrolTimer_timeout"]

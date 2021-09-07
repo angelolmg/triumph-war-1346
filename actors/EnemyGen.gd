@@ -13,7 +13,7 @@ func get_team() -> int:
 
 func _on_Timer_timeout():
 	var GrabedInstance= Enemy.instance()
-	self.add_child(GrabedInstance)
+	get_tree().get_root().get_node("Main").add_child(GrabedInstance)
 	var x_pos = global_position.x
 	x_pos = x_pos - 30
 	var y_pos = global_position.y

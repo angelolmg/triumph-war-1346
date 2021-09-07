@@ -21,6 +21,7 @@ func _update_allies():
 	
 func _process(delta): #Roda todo frame
 	_update_allies()
+	_check_game_status()
 
 func _generate_allies(body):
 	var y_pos = 250; #posição y
@@ -43,7 +44,14 @@ func _on_Timer_timeout():
 	#Posicionar
 	GrabedInstance.global_transform.origin = Vector2(x_pos, y_pos)
 	GrabedInstance.connect("body_entered", self, "_generate_allies")
-	$HelpCallerGen.wait_time = 50 #setar tempo para respawnar
+	$HelpCallerGen.wait_time = 5 #setar tempo para respawnar
 
-#func _check_game_status #Checar se os aliados/player estão mortos ou os inimigos estão mortos
+func _check_game_status(): #Checar se os aliados/player estão mortos ou os inimigos estão mortos
+	var allyNumb = get_tree().get_nodes_in_group("Allies").size()
+	allyNumb = allyNumb + get_tree().get_nodes_in_group("player").size()
+	var enemyNumb = get_tree().get_nodes_in_group("Enemy").size()
+	if allyNumb == 0:
+		get_tree().change_scene("res://DeathMenu.tscn")
+	if enemyNumb == 0:
+		get_tree().change_scene("res://WinMenu.tscn")
 	

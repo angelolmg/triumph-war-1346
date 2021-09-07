@@ -39,3 +39,10 @@ func handle_hit():
 			get_tree().get_root().get_node("Main").add_child(GrabedInstance)
 		queue_free()
 
+func _on_Area2D_body_entered(body): #Caso algo bata nele
+	if body.get_collision_layer() == 5 or body.get_collision_layer() == 256: #vê se ta no layer de camada 9, bit 8, valor 256
+		#Criar instancia
+		var GrabedInstance= AllyDieSound.instance()
+		#Adicionar a arvore game
+		get_tree().get_root().get_node("Main").add_child(GrabedInstance)
+		body.queue_free()

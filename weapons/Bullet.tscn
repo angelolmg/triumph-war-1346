@@ -21,5 +21,6 @@ texture = ExtResource( 2 )
 [node name="KillTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 [connection signal="timeout" from="KillTimer" to="." method="_on_KillTimer_timeout"]

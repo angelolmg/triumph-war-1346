@@ -33,4 +33,5 @@ health = 300
 
 [node name="Team" parent="." instance=ExtResource( 5 )]
 team = 1
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
