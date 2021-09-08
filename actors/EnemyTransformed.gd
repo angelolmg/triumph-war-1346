@@ -9,6 +9,7 @@ onready var team = $Team
 const AllyDieSound = preload("res://Sounds/AllyDieSound.tscn")
 const EnemyDieSound = preload("res://Sounds/EnemyDieSound.tscn")
 const EnemyGen = preload("res://actors/EnemyGen.tscn")
+const Enemy = preload("res://actors/Enemy.tscn")
 
 export (int) var speed = 100
 
@@ -41,6 +42,15 @@ func handle_hit():
 	head.modulate = Color8(head.modulate.r8-25,head.modulate.g8-25,head.modulate.b8-25)
 	
 	if health_stat.health <= 0:
+		#Criar 4 novos inimigos
+		var x_pos = global_position.x
+		var y_pos = global_position.y
+		x_pos = x_pos - 20
+		for n in 4: #Rode 4 vezes (0 a 4)
+			var newEnemyInstance= Enemy.instance()
+			get_tree().get_root().get_node("Main").add_child(newEnemyInstance)
+			newEnemyInstance.global_transform.origin = Vector2(x_pos, y_pos)
+			x_pos = x_pos + 10
 		#Criar instancia
 		var GrabedInstance= EnemyDieSound.instance()
 		#Adicionar a arvore game
