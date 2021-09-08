@@ -23,14 +23,15 @@ func _process(delta): #Roda todo frame
 	_check_game_status()
 
 func _generate_allies(body):
-	var y_pos = 250; #posição y
+	var x_pos = rand_range(30, 60) #posição x
+	var y_pos = rand_range(100, 580) #posição y
 	for n in 4: #Rode 4 vezes (0 a 4)
 		#Criar instancia
 		var GrabedInstance= Ally.instance()
 		#Adicionar a arvore
 		self.add_child(GrabedInstance)
 		#Posicionar
-		GrabedInstance.global_transform.origin = Vector2(40, y_pos)
+		GrabedInstance.global_transform.origin = Vector2(x_pos, y_pos)
 		y_pos = y_pos + 25;
 
 func _on_Timer_timeout():
