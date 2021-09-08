@@ -1,6 +1,32 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://WinMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/top-down-shooter-1/hud/yellow_button13.png" type="Texture" id=2]
+[ext_resource path="res://assets/top-down-shooter-1/hud/yellow_button00.png" type="Texture" id=3]
+[ext_resource path="res://assets/top-down-shooter-1/Pixelmania.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 190, 49 )
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 3
+extra_spacing_bottom = 3
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 190, 49 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 8
+font_data = ExtResource( 4 )
 
 [node name="WinMenu" type="Control"]
 anchor_right = 1.0
@@ -11,11 +37,13 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 383.713
+margin_left = 376.713
 margin_top = 137.748
-margin_right = 658.713
-margin_bottom = 165.748
-text = "Mission Complete"
+margin_right = 651.713
+margin_bottom = 169.748
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.34902, 0.835294, 0.360784, 1 )
+text = "VITORIA"
 align = 1
 valign = 1
 autowrap = true
@@ -28,9 +56,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -136.0
+margin_left = -136.336
 margin_top = -65.0
-margin_right = 150.0
+margin_right = 149.664
 margin_bottom = 65.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -38,14 +66,19 @@ __meta__ = {
 
 [node name="TryAgain" type="Button" parent="VBoxContainer"]
 margin_right = 286.0
-margin_bottom = 20.0
-text = "Try Again?"
+margin_bottom = 38.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "RESTART"
 
 [node name="GoToMenu" type="Button" parent="VBoxContainer"]
-margin_top = 24.0
+margin_top = 42.0
 margin_right = 286.0
-margin_bottom = 44.0
-text = "Main Menu"
+margin_bottom = 58.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RETORNAR AO MENU"
 
 [connection signal="pressed" from="VBoxContainer/TryAgain" to="." method="_on_TryAgain_pressed"]
 [connection signal="pressed" from="VBoxContainer/GoToMenu" to="." method="_on_GoToMenu_pressed"]

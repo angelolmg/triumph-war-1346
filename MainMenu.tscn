@@ -1,4 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/top-down-shooter-1/hud/yellow_button13.png" type="Texture" id=1]
+[ext_resource path="res://assets/top-down-shooter-1/hud/yellow_button00.png" type="Texture" id=2]
+[ext_resource path="res://assets/top-down-shooter-1/Pixelmania.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/top-down-shooter-1/image.jpg" type="Texture" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -27,10 +32,53 @@ func _on_QuitButton_pressed():
 	get_tree().quit()
 "
 
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 190, 49 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 29
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 6
+extra_spacing_bottom = 8
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 190, 49 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 11
+extra_spacing_top = 3
+extra_spacing_char = 5
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 190, 49 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 11
+extra_spacing_char = 8
+font_data = ExtResource( 3 )
+
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 0.840881
+margin_right = 0.84082
 script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.498039, 0.643137, 0.682353, 1 )
+margin_right = 1680.0
+margin_bottom = 1050.0
+rect_scale = Vector2( 1.29644, 1.1854 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -40,32 +88,46 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -207.501
-margin_top = -131.814
-margin_right = 197.499
-margin_bottom = 159.186
+margin_left = -211.501
+margin_top = -154.814
+margin_right = 193.499
+margin_bottom = 136.186
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NewGameButton" type="Button" parent="VBoxContainer"]
-margin_top = 111.0
+margin_top = 83.0
 margin_right = 405.0
-margin_bottom = 131.0
-text = "New Game"
+margin_bottom = 153.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "NOVO JOGO"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
-margin_top = 135.0
+margin_top = 157.0
 margin_right = 405.0
-margin_bottom = 155.0
-text = "Options"
+margin_bottom = 182.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "CONFIGURAR"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
-margin_top = 159.0
+margin_top = 186.0
 margin_right = 405.0
-margin_bottom = 179.0
-text = "Quit"
+margin_bottom = 208.0
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SAIR"
 
 [connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]

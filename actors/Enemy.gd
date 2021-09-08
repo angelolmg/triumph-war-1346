@@ -26,6 +26,12 @@ func get_team() -> int:
 
 func handle_hit():
 	health_stat.health -= 20
+	
+	var body = get_node("Body")
+	var head = get_node("Head")
+	body.modulate = Color8(body.modulate.r8-25,body.modulate.g8-25,body.modulate.b8-25)
+	head.modulate = Color8(head.modulate.r8-25,head.modulate.g8-25,head.modulate.b8-25)
+	
 	if health_stat.health <= 0:
 		if team.team == 0:
 			#Criar instancia
