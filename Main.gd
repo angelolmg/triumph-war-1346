@@ -57,7 +57,7 @@ func _check_game_status(): #Checar se os aliados/player estão mortos ou os inim
 
 func _on_EnemyTransGen_timeout():
 	var x_pos = rand_range(20, 800) #posição x
-	var y_pos = rand_range(10, 590) #posição y
+	var y_pos = rand_range(20, 550) #posição y
 	#Criar instancia
 	var GrabedInstance= enemyTransf.instance()
 	#Adicionar a arvore game
