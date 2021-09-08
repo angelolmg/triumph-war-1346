@@ -1466,6 +1466,10 @@ margin_bottom = 52.0
 wait_time = 5.0
 autostart = true
 
+[node name="EnemyTransGen" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [node name="Inner Wall" type="Node2D" parent="."]
 position = Vector2( 17.4983, -501.881 )
 rotation = 1.5708
@@ -1535,9 +1539,6 @@ position = Vector2( -14.2742, -1025.09 )
 
 [node name="InvisibleWall4" parent="Outer Wall" instance=ExtResource( 10 )]
 
-[node name="RevivePlayer" type="Timer" parent="."]
-wait_time = 4.0
-
 [connection signal="input_event" from="Player" to="." method="_on_Player_input_event"]
 [connection signal="timeout" from="HelpCallerGen" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="RevivePlayer" to="." method="_on_RevivePlayer_timeout"]
+[connection signal="timeout" from="EnemyTransGen" to="." method="_on_EnemyTransGen_timeout"]

@@ -6,6 +6,7 @@ onready var player: Player = $Player
 #Para instanciar por código
 const Ally = preload("res://actors/Ally.tscn")
 const callHelp = preload("res://CallHelp.tscn")
+const enemyTransf = preload("res://EnemyTransf.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -52,14 +53,14 @@ func _check_game_status(): #Checar se os aliados/player estão mortos ou os inim
 		get_tree().change_scene("res://DeathMenu.tscn")
 	if enemyNumb == 0:
 		get_tree().change_scene("res://WinMenu.tscn")
-	
-func _start_reviving():
-	print("Morri, comece a contagem")
-	$RevivePlayer.start()
-	
-func _on_RevivePlayer_timeout():
-	if get_tree().get_nodes_in_group("Allies").size() != 0:
-		player.instance()
-		$RevivePlayer.stop()
-	else:
-		$RevivePlayer.wait_time = 1
+
+func _on_EnemyTransGen_timeout():
+	var x_pos = rand_range(20, 800) #posição x
+	var y_pos = rand_range(10, 590) #posição y
+	#Criar instancia
+	var GrabedInstance= enemyTransf.instance()
+	#Adicionar a arvore game
+	self.add_child(GrabedInstance)
+	#Posicionar
+	GrabedInstance.global_transform.origin = Vector2(x_pos, y_pos)
+	$EnemyTransGen.wait_time = 10 #setar tempo para respawnar
